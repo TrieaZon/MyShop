@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductList from '../components/ProductList';
+import { Row } from 'react-bootstrap';
 
 const HomeScreen = () => {
     
@@ -12,11 +13,12 @@ const HomeScreen = () => {
   },[]);
     
     return (
-        <div>
-        
-            <ProductList products={ products }/>
-        
-        </div>    
+        <>
+            <h1>Latest Products</h1>
+            <Row>
+                <ProductList products={ products }/>
+            </Row>
+        </>    
     );
 };
 
