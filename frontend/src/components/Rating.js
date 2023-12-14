@@ -4,21 +4,19 @@ import PropTypes from 'prop-types';
 const Rating = ({ value, color }) => {
     
     const ratingStars = ({value}) => {
-        let counter = 0;
+        
         let result = [];
-        while(counter < value){
-            if(value <= 0.5) {
-                result.push(<i style={{color}} className='far fa-star'></i>);
-            }
-            else if(value - counter >= 1){
-                counter++;
-                result.push(<i style={{color}} className='fas fa-star'></i>);
-                
-            }
-            else if(value - counter >= 0.5) {
+        for(let i = value; i >= 0.5; i--){
+            
+            if(i < 1 && i >= 0.5){
                 result.push(<i style={{color}} className='fas fa-star-half-alt'></i>);
                 break;
-            } 
+            }
+            else if(i < 0.5){
+                result.push(<i style={{color}} className='far fa-star'></i>);
+                break;
+            }
+            result.push(<i style={{color}} className='fas fa-star'></i>);
         }
         return [...result];
         
