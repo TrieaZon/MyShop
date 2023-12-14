@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Rating = ({ value, color }) => {
     
-    const ratingStars = ({value}) => {
+    const ratingStars = ({value}) => { //check if brackets are necessary here or just when calling the function
         
         let result = [];
         for(let i = value; i >= 0.5; i--){
