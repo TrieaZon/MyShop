@@ -5,27 +5,26 @@ const Rating = ({ value, color }) => {
     
     const ratingStars = ({value}) => { //check if brackets are necessary here or just when calling the function
         
-        let result = [];
-        for(let i = value; i >= 0.5; i--){
+        let starArray = [];
+        for(let i = 1; i <= 5; i++){
             
-            if(i < 1 && i >= 0.5){
-                result.push(<i style={{color}} className='fas fa-star-half-alt'></i>);
-                break;
+            if(value >= i){
+                starArray.push(<i style={{color}} className='fas fa-star'></i>);
             }
-            else if(i < 0.5){
-                result.push(<i style={{color}} className='far fa-star'></i>);
-                break;
+            else if(i - value >= 0.5){
+                starArray.push(<i style={{color}} className='fas fa-star-half-alt'></i>);
+            } else {
+                starArray.push(<i style={{color}} className='far fa-star'></i>);   
             }
-            result.push(<i style={{color}} className='fas fa-star'></i>);
         }
-        return [...result];
+        return [...starArray];
         
     };
     
     return (
         <div className='rating'>
             <span>
-               {ratingStars({value})} 
+               {ratingStars({value})}
             </span>
         </div>
     );
