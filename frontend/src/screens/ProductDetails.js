@@ -5,8 +5,6 @@ import { Row, Col, Image, Card, Button, ListGroup } from 'react-bootstrap';
 const ProductDetails = ({ products }) => {
     const params = useParams();
     const product = products.find(p => p.id == params.id);
-    console.log(product);
-    // console.log(params.id);
     
     return (
         <>
