@@ -5,7 +5,7 @@ import Rating from '../components/Rating';
 
 const ProductDetails = ({ products }) => {
     const params = useParams();
-    const product = products.find(p => p.id == params.id);
+    
     
     return (
         <>
@@ -19,34 +19,34 @@ const ProductDetails = ({ products }) => {
                 </Col>
                 <Col md={3}>
                     <ListGroup variant='flush'>
-                        <ListGroup.Item>
+                        <ListGroupItem>
                             <h3>{ product.title }</h3>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
+                        </ListGroupItem>
+                        <ListGroupItem>
                             <Rating value={ product.rating }/>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
+                        </ListGroupItem>
+                        <ListGroupItem>
                             Price: ${ product.price }
-                        </ListGroup.Item>
-                        <ListGroup.Item>
+                        </ListGroupItem>
+                        <ListGroupItem>
                             Description: { product.description }
-                        </ListGroup.Item>
+                        </ListGroupItem>
                     </ListGroup>
                 </Col>
                 <Col md={3}>
                     <Card>
                         <ListGroup variant='flush'>
                             
-                            <ListGroup.Item>
+                            <ListGroupItem>
                                 <Row>
                                     <Col>Price:</Col>
                                     <Col>
                                         <strong>${ product.price }</strong>
                                     </Col>
                                 </Row>
-                            </ListGroup.Item>
+                            </ListGroupItem>
 
-                            <ListGroup.Item>
+                            <ListGroupItem>
                                 <Row>
                                     <Col>Status:</Col>
                                     <Col>
@@ -54,9 +54,9 @@ const ProductDetails = ({ products }) => {
                                         'Out of Stock'}
                                     </Col>
                                 </Row>
-                            </ListGroup.Item>
+                            </ListGroupItem>
 
-                            <ListGroup.Item>
+                            <ListGroupItem>
                                 <Button 
                                     className='btn-block'
                                     type='button'
@@ -64,7 +64,7 @@ const ProductDetails = ({ products }) => {
                                 >
                                     Add To Cart
                                 </Button>
-                            </ListGroup.Item>
+                            </ListGroupItem>
                         </ListGroup>
                     </Card>
                 </Col>
