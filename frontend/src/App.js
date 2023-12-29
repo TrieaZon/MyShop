@@ -5,15 +5,19 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeScreen from './screens/HomeScreen';
 import ProductDetails from'./screens/ProductDetails';
+import axios from 'axios';
 
 function App() {
   
   const [products, setProducts] = useState([]);
   
     useEffect(() => {
-        fetch('https://raw.githubusercontent.com/Ovi/DummyJSON/master/src/data/products.json')
-        .then(res => res.json())
-        .then(products => {setProducts(products)});
+      const fetchProducts = async () => {
+        const {data} = await axios.get('/api/products');
+        setProducts(data);  
+      };
+      
+      fetchProducts();
   },[]);
   
   return (
@@ -25,7 +29,7 @@ function App() {
           <Container>
             <Routes>
               <Route path='/' exact element={<HomeScreen products={ products }/>} />
-              <Route path='/product/:id' element={<ProductDetails products={ products }/>} />
+              <Route path='/product/:id' element={<ProductDetails />} />
             </Routes>
           </Container>
         </main>
