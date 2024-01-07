@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Row, Col, Image, Card, Button, ListGroup, ListGroupItem } from 'react-bootstrap';
 import Rating from '../components/Rating';
 
-const ProductDetails = ({ products }) => {
+const ProductDetails = () => {
     const params = useParams();
     const [product, setProduct] = useState({});
     
