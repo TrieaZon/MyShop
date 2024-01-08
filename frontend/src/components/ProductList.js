@@ -8,11 +8,11 @@ const ProductList = () => {
     const [products, setProducts] = useState([]);
   
     useEffect(() => {
-      const fetchProducts = async () => {
-        const {data} = await axios.get('/api/products');
-        setProducts(data);  
+        const fetchProducts = async () => {
+            console.log('home page effect ran');
+            const {data} = await axios.get('/api/products');
+            setProducts(data);  
       };
-      
       fetchProducts();
     },[]);
   
@@ -20,12 +20,12 @@ const ProductList = () => {
         return (
             <Col sm={12} md={6} lg={4} xl={3}>
                 <ProductCard
-                key={ product.id }
-                id={ product.id }
-                image={ product.images[0] }
-                title={ product.title }
-                price={ product.price }
-                rating={ product.rating }
+                key={ products[i].id }
+                id={ products[i].id }
+                image={ products[i].images[0] }
+                title={ products[i].title }
+                price={ products[i].price }
+                rating={ products[i].rating }
                 />
             </Col>
         );
