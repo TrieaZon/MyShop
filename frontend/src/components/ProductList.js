@@ -9,7 +9,6 @@ const ProductList = () => {
   
     useEffect(() => {
         const fetchProducts = async () => {
-            console.log('home page effect ran');
             const {data} = await axios.get('/api/products');
             setProducts(data);  
       };

@@ -11,7 +11,6 @@ const ProductDetails = () => {
     
     useEffect(() => {
         const fetchProduct = async () => {
-            console.log('product details effect ran');
             const {data} = await axios.get(`/api/product/${id}`);
             setProduct(data);
             setIsLoading(false);
