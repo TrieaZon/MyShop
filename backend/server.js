@@ -1,5 +1,6 @@
 import express from 'express';
 import axios from 'axios';
+import products from './data/products.js'
 
 const app = express();
     
@@ -12,6 +13,11 @@ app.get('/api/products', async (req, res) => {
     res.json(data);
     
 });
+
+// "Test code for using local file for api"
+// app.get('/test', async (req, res) => {            
+//     res.json(products);
+// });
 
 app.get('/api/product/:id', async (req, res) => {
     
