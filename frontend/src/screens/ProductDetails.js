@@ -11,8 +11,9 @@ const ProductDetails = () => {
     
     useEffect(() => {
         const fetchProduct = async () => {
-            const {data} = await axios.get(`/api/product/${id}`);
+            const {data} = await axios.get(`/api/products/${id}`);
             setProduct(data);
+            console.log(data);
             setIsLoading(false);
         };
         fetchProduct();
@@ -30,7 +31,7 @@ const ProductDetails = () => {
                 <Row>
                 
                     <Col md={6}>
-                        <Image src={ product.images[0] } alt={ product.title } fluid />
+                        <Image src={ product.image } alt={ product.title } fluid />
                     </Col>
                     <Col md={3}>
                         <ListGroup variant='flush'>

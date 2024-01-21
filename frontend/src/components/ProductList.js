@@ -6,35 +6,42 @@ import axios from 'axios';
 const ProductList = () => {
     
     const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
   
     useEffect(() => {
         const fetchProducts = async () => {
             const {data} = await axios.get('/api/products');
-            setProducts(data);  
+            setProducts(data);
+            console.log(data)
+            setIsLoading(false); 
       };
       fetchProducts();
-    },[]);
+    },[isLoading]);
   
-    const productsArray = products.map((product, i) => {
+    const productsArray = products.map(p => {
         return (
             <Col sm={12} md={6} lg={4} xl={3}>
                 <ProductCard
-                key={ products[i].id }
-                id={ products[i].id }
-                image={ products[i].images[0] }
-                title={ products[i].title }
-                price={ products[i].price }
-                rating={ products[i].rating }
+                key={ p._id }
+                id={ p._id }
+                image={ p.image }
+                title={ p.name }
+                price={ p.price }
+                rating={ p.rating }
                 />
             </Col>
         );
     });
-    return (
-        <>
-            { productsArray }
-        </>
-    );
-    
+
+    if(isLoading) {
+        return <h1>Loading...</h1>
+    } else {
+        return (
+            <>
+                { productsArray }
+            </>
+        );    
+    };   
 };
 
 export default ProductList;
