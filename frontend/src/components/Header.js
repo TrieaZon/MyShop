@@ -4,7 +4,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 const Header = () => {
     return (
         <header>
-            <Navbar expand="lg" className="bg-body-tertiary">
+            <Navbar expand="lg" className="bg-primary" data-bs-theme="dark">
                 <Container>
                 
                     <Navbar.Brand href="/">MyShop</Navbar.Brand>

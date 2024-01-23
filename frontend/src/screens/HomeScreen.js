@@ -22,7 +22,7 @@ const HomeScreen = () => {
             <h1>Latest Products</h1>
             
                 {
-                    loading? (<Loader />) :
+                    loading ? (<Loader />) :
                         error ? (<Message variant='danger'>{error}</Message>) :
                         (<Row>
                             <ProductList products={ products } />
