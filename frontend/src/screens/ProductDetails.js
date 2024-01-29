@@ -90,10 +90,11 @@ const ProductDetails = () => {
                                                         onChange={e => setQty(e.target.value)}
                                                         >
                                                         {
-                                                            [...Array(product.countInStock).keys()].map(x => (<option 
+                                                            [...Array(product.countInStock).keys()].map(x => (
+                                                                <option 
                                                                     key={x+1}
                                                                     value={x+1}
-                                                                    >{x+1}</option>))
+                                                                >{x+1}</option>))
                                                         }
 
                                                     </Form.Control>
