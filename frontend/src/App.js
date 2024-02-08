@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import HomeScreen from './screens/HomeScreen';
 import ProductDetails from './screens/ProductDetails';
 import CartScreen from './screens/CartScreen';
+import LoginScreen from './screens/LoginScreen';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
               <Route path='/product/:id' element={<ProductDetails />} />
               <Route path='/cart' element={<CartScreen />} />
               <Route path='/cart/:id' element={<CartScreen />} />
+              <Route path='/login' element={<LoginScreen />} />
             </Routes>
           </Container>
         </main>
