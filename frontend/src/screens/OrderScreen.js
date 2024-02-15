@@ -158,7 +158,8 @@ const OrderScreen = () => {
                   <Col>${updatedOrder.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              {!order.isPaid && (
+              {// why the double && //
+              !order.isPaid && (
                 <ListGroup.Item>
                   {loadingPay && <Loader />}
                     <PayPalScriptProvider options={{ "client-id": paypalkey,

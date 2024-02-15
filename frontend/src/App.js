@@ -12,6 +12,7 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import OrderScreen from './screens/OrderScreen';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
               <Route path='/placeorder' element={<PlaceOrderScreen />} />
               <Route path='/register' element={<RegisterScreen />} />
               <Route path='/profile' element={<ProfileScreen />} />
+              <Route path='/order/:id' element={<OrderScreen />} />
             </Routes>
           </Container>
         </main>

@@ -29,6 +29,11 @@ import {
           loading: false,
           error: action.payload,
         }
+      case PAYPAL_KEY:
+        return {
+          loading: false,
+          paypalkey: action.payload,
+        }
   
       default:
         return state
